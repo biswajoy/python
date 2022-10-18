@@ -1,0 +1,8 @@
+def encrypt(text,k):
+	result=''
+	alpha='abcdefghijklmnopqrstuvwxyz'
+	for i in range(len(text)):
+		result += alpha[(alpha.index(text[i])+k)%26]
+	return result
+text,k=input("enter word: "), input("enter shift: ")
+print(encrypt(text,k))
