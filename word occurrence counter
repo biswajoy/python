@@ -1,0 +1,10 @@
+def exact_count(para, n):
+    D = dict()
+    for word in para.split(' '):
+        if word not in D:
+            D[word] = 0
+        D[word] += 1
+    for word in D:
+        if D[word] == n:
+            return True
+    return False
