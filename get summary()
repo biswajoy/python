@@ -1,0 +1,10 @@
+def get_summary(trans):
+    summary = list()
+    for T in trans:
+        D = {'TID': T['TID']}
+        val = 0
+        for item in T['Items']:
+            val = val + item['Price'] * item['Qty']
+        D['Cost'] = val
+        summary.append(D)
+    return summary
