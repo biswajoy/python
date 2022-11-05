@@ -1,0 +1,40 @@
+
+def matrix_type(M):
+    n = len(M)
+    is_diag = True
+    for i in range(n):
+        for j in range(n):
+            if i != j and M[i][j] != 0:
+                is_diag = False
+                break
+
+    if is_diag:
+        is_scalar = True
+    else:
+        is_scalar = False
+
+    if is_scalar:
+        l = M[0][0]
+        for i in range(n):
+            if M[i][i] != l:
+                is_scalar = False
+                break
+
+    if is_scalar:
+        is_iden = True
+    else:
+        is_iden = False
+        
+    if is_iden:
+        for i in range(n):
+            if M[i][i] != 1:
+                is_iden = False
+                break
+
+    if not is_diag:
+        return 'non-diagonal'
+    if is_iden:
+        return 'identity'
+    if is_scalar:
+        return 'scalar'
+    return 'diagonal'
