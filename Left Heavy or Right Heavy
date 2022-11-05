@@ -1,0 +1,14 @@
+L = list(eval(input()))
+mid = len(L) // 2
+
+lsum, rsum = 0, 0
+for i in range(mid):
+    lsum = lsum + L[i]
+    rsum = rsum + L[mid + i]
+
+if lsum == rsum:
+    print('balanced')
+elif lsum > rsum:
+    print('left-heavy')
+else:
+    print('right-heavy')
