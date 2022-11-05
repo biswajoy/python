@@ -1,0 +1,21 @@
+
+
+
+pno = input()
+cpno = ''
+count = 0
+for char in pno:
+    if char == 'o':
+        cpno = cpno + '0'
+        count += 1
+    elif char == 'l':
+        cpno = cpno + '1'
+        count += 1
+    else:
+        cpno = cpno + char
+
+if count == 0:
+    print('No mistakes')
+else:
+    print(f'{count} mistakes')
+    print(cpno)
