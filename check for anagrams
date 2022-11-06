@@ -1,0 +1,13 @@
+word1= input()
+word2= input()
+l=[]
+m=[]
+for a in word1:
+	l.append(a)
+for b in word2:
+	m.append(b)
+
+if(sorted(l)==sorted(m)):
+	print("True")
+else:
+	print("False")
