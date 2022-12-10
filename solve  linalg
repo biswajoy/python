@@ -1,0 +1,9 @@
+from numpy import linalg as np
+
+def solve_linear_equation(A, b):
+  
+  x = np.solve(A, b)
+
+ 
+  print(f"The solution to the linear equation is x = {x}")
+
