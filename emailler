@@ -1,0 +1,53 @@
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+import os
+
+# Your email address and password
+username = "YOUR_EMAIL_ADDRESS"
+password = "YOUR_EMAIL_PASSWORD"
+
+# The recipients of the email
+recipients = ["RECIPIENT_1", "RECIPIENT_2", ...]
+
+# The subject and body of the email
+subject = "SUBJECT_OF_THE_EMAIL"
+body = "BODY_OF_THE_EMAIL"
+
+# The path to the PDF files
+pdf_path = "PATH_TO_THE_PDF_FILES"
+
+# Create a new SMTP client
+client = smtplib.SMTP("smtp.gmail.com", 587)
+
+# Connect to the server
+client.starttls()
+client.login(username, password)
+
+# Iterate over the PDF files
+for pdf_file in os.listdir(pdf_path):
+  # Create a new email message
+  message = MIMEMultipart()
+  message["From"] = username
+  message["To"] = recipient
+  message["Subject"] = subject
+
+  # Add the body of the email to the message
+  text = MIMEText(body)
+  message.attach(text)
+
+  # Read the PDF file
+  with open(os.path.join(pdf_path, pdf_file), "rb") as f:
+    data = f.read()
+
+  # Add the PDF file to the email as an attachment
+  pdf = MIMEApplication(data, "pdf")
+  pdf.add_header("Content-Disposition", f"attachment; filename={pdf_file}")
+  message.attach(pdf)
+
+  # Send the email to the recipient
+  client.sendmail(username, recipient, message.as_string())
+
+# Disconnect from the server
+client.quit()
