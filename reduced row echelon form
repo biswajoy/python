@@ -1,0 +1,12 @@
+from numpy import linalg as np
+
+def reduced_row_echelon_form(matrix):
+  
+  rank = np.matrix_rank(matrix)
+
+
+  rref = np.matrix_rank(matrix, True)
+
+  
+  print(f"The reduced row echelon form of the matrix is:\n{rref}")
+
