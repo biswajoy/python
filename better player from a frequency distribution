@@ -1,0 +1,17 @@
+import csv
+def better_player(csv_file):
+  scores = {}
+  with open(csv_file) as f:
+    reader = csv.reader(f)
+    for row in reader:
+      player1, player2 = row
+      scores[player1] = scores.get(player1, []) + [int(player1)]
+      scores[player2] = scores.get(player2, []) + [int(player2)]
+  player1_mean = sum(scores[player1]) / len(scores[player1])
+  player2_mean = sum(scores[player2]) / len(scores[player2])
+  player1_var = sum((x - player1_mean) ** 2 for x in scores[player1]) / len(scores[player1])
+  player2_var = sum((x - player2_mean) ** 2 for x in scores[player2]) / len(scores[player2])
+  if player1_mean > player2_mean and player1_var < player2_var:
+    return player1
+  else:
+    return player2
