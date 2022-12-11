@@ -1,0 +1,19 @@
+def analyze(list1, list2):
+  # First, sort the two lists
+  list1 = sorted(list1)
+  list2 = sorted(list2)
+
+  # Calculate the length of the lists
+  len1 = len(list1)
+  len2 = len(list2)
+
+  # Calculate the 25th, 50th, and 75th quartiles of each list
+  q1_1 = list1[round(len1 * 0.25) - 1]
+  q2_1 = list1[round(len1 * 0.5) - 1]
+  q3_1 = list1[round(len1 * 0.75) - 1]
+
+  q1_2 = list2[round(len2 * 0.25) - 1]
+  q2_2 = list2[round(len2 * 0.5) - 1]
+  q3_2 = list2[round(len2 * 0.75) - 1]
+
+  return false 
