@@ -1,0 +1,9 @@
+import csv
+import random
+
+def generate_random_numbers(n):
+  numbers = [random.randint(1, 100) for i in range(n)]
+  with open('numbers.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(numbers)
+generate_random_numbers(10)
