@@ -1,0 +1,13 @@
+import csv
+def csv_without_duplicates_sorted(filename):
+  data = []
+  with open(filename, 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+      data.append(row)
+  data = sorted(set(*data))
+  modified_file_name = filename[:-4] + '_modified.csv'
+  with open(modified_file_name, 'w') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+  return modified_file_name
