@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def plot_gdp_comparison(csv_file):
+    df = pd.read_csv(csv_file)
+    country_gdps = {}
+    for country in df.columns[1:]:
+        x = df['Year']
+        y = df[country]
+        country_gdps[country] = (x, y)
+    for country, gdp_data in country_gdps.items():
+        x, y = gdp_data
+        plt.plot(x, y, label=country)
+    plt.xlabel('Year')
+    plt.ylabel('GDP')
+    plt.title('GDP Comparison')
+    plt.legend()
+    plt.show()
