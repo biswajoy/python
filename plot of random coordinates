@@ -1,0 +1,22 @@
+import random
+import matplotlib.pyplot as plt
+import numpy as np
+
+def create_coordinates(size):
+  coordinates = []
+  for i in range(size):
+    x = random.uniform(-100, 100)
+    y = random.uniform(-100, 100)
+    coordinates.append((x, y))
+  return coordinates
+def plot_line_of_regression(coordinates):
+  x = [coord[0] for coord in coordinates]
+  y = [coord[1] for coord in coordinates]
+  coefficients = np.polyfit(x, y, 1)
+  polynomial = np.poly1d(coefficients)
+  plt.plot(x, y, "o")
+  plt.plot(x, polynomial(x), "r-")
+  plt.show()
+
+coordinates = create_coordinates(25)
+plot_line_of_regression(coordinates)
