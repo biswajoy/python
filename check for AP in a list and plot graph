@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import csv
+def check_and_plot(filepath):
+	with open(filepath,'r') as file:
+		values = []
+		cs = csv.reader(file)
+		for lines in cs:
+			for line in lines:
+				print(line)
+				values.append(float(line))
+			print(values)
+		diff = values[1] - values[0]
+		is_ap = all(value - prev_value == diff for prev_value, value in zip(values, values[1:]))
+		if is_ap:
+			plt.plot(values)
+			plt.show()
+		else:
+			print("The values in the file are not in arithmetic progression.")
+
+
