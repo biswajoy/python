@@ -1,0 +1,26 @@
+def find_seq_sum_51(file_name, number):
+  # Open the CSV file and read the data points
+  with open(file_name, 'r') as file:
+    data = file.readlines()
+    
+  # Sort the data points
+  data.sort()
+  
+  # Initialize a list to store the sequences of numbers
+  sequences = []
+  
+  # Loop over the data points
+  for i in range(len(data)):
+    # Initialize a variable to store the current sequence
+    current_seq = []
+    
+    # Loop over the data points again
+    for j in range(i+1, len(data)):
+      # Add the current number to the current sequence
+      current_seq.append(data[j])
+      
+      # If the sum of the current sequence is 51, add it to the list of sequences
+      if sum(current_seq) == number:
+        sequences.append(current_seq)
+        
+  return sequences
