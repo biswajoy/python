@@ -1,0 +1,10 @@
+# untested 
+def analyze_data(filepath):
+    data = pd.read_csv(filepath)
+    correlation = data['mortality_rate'].corr(data['gdp'])
+    print("Correlation between mortality rate and GDP:", correlation)
+    plt.scatter(data['mortality_rate'], data['gdp'])
+    plt.xlabel('Mortality rate')
+    plt.ylabel('GDP')
+    plt.title('Mortality rate vs. GDP')
+    plt.show()
