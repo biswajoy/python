@@ -1,0 +1,15 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+def plot_data(filepath):
+	data = pd.read_csv(filepath)
+	x_column = data.columns[0]
+	y_columns = data.columns[1:]
+	data.plot.bar(x=x_column, y=y_columns, figsize=(10, 6), linewidth=3)
+	plt.xlabel(x_column)
+	plt.ylabel(" ")
+	plt.title("Values vs. {}".format(x_column))
+	plt.savefig('mizo_data_bar.png')
+	plt.savefig('mizo_data_bar.pdf')
+	plt.show()
+	
+plot_data("mizo_livestock_dataset.csv")
