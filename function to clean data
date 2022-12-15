@@ -1,0 +1,22 @@
+# untested
+def clean_data(file_name):
+    # Open the file and read the data
+    with open(file_name, 'r') as file:
+        data = file.read()
+
+    # Clean the data by removing unnecessary whitespace and punctuation
+    data = data.strip()
+    data = data.replace(',', '')
+    data = data.replace('.', '')
+
+    # Split the data into a list of individual values
+    values = data.split()
+
+    # Remove any outliers or bogus values from the list
+    values = [x for x in values if x not in ['-99999', '999999']]
+
+    # Insert relevant data in case of missing values
+    values = [x if x != '-1' else 'N/A' for x in values]
+
+    # Return the cleaned and processed data
+    return values
