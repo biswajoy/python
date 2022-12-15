@@ -1,0 +1,33 @@
+import csv
+import matplotlib.pyplot as plt
+
+def analyze_bills(file_name):
+    # Read the data from the CSV file
+    with open(file_name, 'r') as file:
+        reader = csv.reader(file)
+        data = list(reader)
+
+    # Extract the month and bill data from the frequency table
+    months = [row[0] for row in data]
+    bills = [float(row[1]) for row in data]
+
+    # Calculate the inflation rate
+    inflation_rate = (bills[-1] - bills[0]) / bills[0]
+
+    # Generate the predicted bills for next year
+    predicted_bills = [bill * (1 + inflation_rate) for bill in bills]
+
+    # Create a new frequency table containing the predicted bills
+    new_data = [[month, predicted_bill] for month, predicted_bill in zip(months, predicted_bills)]
+
+    # Plot the original and predicted bills on a graph
+    plt.plot(months, bills, label="Original")
+    plt.plot(months, predicted_bills, label="Predicted")
+    plt.xlabel("Month")
+    plt.ylabel("Bill")
+    plt.title("Bills Over Time")
+    plt.legend()
+    plt.show()
+
+    # Return the new frequency table
+    return new_data
