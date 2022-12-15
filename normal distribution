@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import csv
+import numpy as np
+
+def plot_normal_distribution(csv_file):
+    # Read the CSV file and extract the data
+    with open(csv_file, 'r') as f:
+        reader = csv.reader(f)
+        data = [row for row in reader]
+
+    # Extract the x and y values from the data
+    x_values = [float(row[0]) for row in data]
+    y_values = [float(row[1]) for row in data]
+
+    # Convert the x values to a numpy array
+    x_values = np.array(x_values)
+
+    # Use the x and y values to plot the normal distribution curve
+    plt.plot(x_values, y_values)
+    plt.show()
