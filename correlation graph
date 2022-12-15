@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def check_climate_correlations(filepath):
+  # Read the data from the file into a Pandas DataFrame
+  data = pd.read_csv(filepath)
+
+  # Calculate the correlations between the climate and the other parameters
+  correlations = data.corr()
+
+  # Print the correlations to the console
+  print(correlations)
+
+  # Create a heatmap of the correlations
+  plt.matshow(correlations)
+  plt.show()
