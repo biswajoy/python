@@ -1,0 +1,15 @@
+import pandas as pd
+import syllable
+
+def create_syllable_table(filepath):
+  # Read the .csv file using pandas
+  df = pd.read_csv(filepath)
+
+  # Extract the list of words from the dataframe
+  words = df['Words']
+
+  # Create a new column in the dataframe to store the syllable count
+  df['Syllables'] = [syllable.estimate(word) for word in words]
+
+  # Return the edited dataframe
+  return df
