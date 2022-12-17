@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def plot_beam(filepath):
+  # Read the .csv file using pandas
+  df = pd.read_csv(filepath)
+
+  # Extract the shear force and bending moment data from the dataframe
+  shear_force = df['Shear Force']
+  bending_moment = df['Bending Moment']
+
+  # Plot the shear force data using matplotlib
+  plt.plot(shear_force)
+  plt.xlabel('Distance (m)')
+  plt.ylabel('Shear Force (N)')
+  plt.show()
+
+  # Plot the bending moment data using matplotlib
+  plt.plot(bending_moment)
+  plt.xlabel('Distance (m)')
+  plt.ylabel('Bending Moment (Nm)')
+  plt.show()
+
