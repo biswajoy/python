@@ -1,0 +1,11 @@
+def half_pyramid(n):
+  # Base case: If n is 0, return and do not print anything
+  if n == 0:
+    return
+
+  # Recursive case: Print n stars, followed by a newline, then call the function
+  # with n-1
+  for i in range(n):
+    print(' ', end='')
+  print('*')
+  half_pyramid(n - 1)
