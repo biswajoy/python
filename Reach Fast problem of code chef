@@ -1,0 +1,10 @@
+from math import ceil as c
+def minimum_steps(x, y, k):
+  diff = y - x
+  steps = c(abs(diff/k))
+  return steps
+t = int(input())
+for i in range(t):
+  x, y, k = map(int, input().split())
+  steps = minimum_steps(x, y, k)
+  print(steps)
