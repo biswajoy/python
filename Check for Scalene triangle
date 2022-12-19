@@ -1,0 +1,8 @@
+t = int(input())
+for i in range(t):
+  a, b, c = map(int, input().split())
+  sides = {a, b, c}
+  if len(sides) == 3:
+    print("YES")
+  else:
+    print("NO")
