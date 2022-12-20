@@ -1,0 +1,15 @@
+def transpose(matrix):
+  # Get the number of rows and columns in the matrix
+  rows = len(matrix)
+  cols = len(matrix[0])
+
+  # Create a new matrix with the same number of columns as the original
+  # matrix and the same number of rows as the original matrix
+  transposed = [[0 for j in range(rows)] for i in range(cols)]
+
+  # Iterate over the original matrix and transpose the values
+  for i in range(rows):
+    for j in range(cols):
+      transposed[j][i] = matrix[i][j]
+
+  return transposed
