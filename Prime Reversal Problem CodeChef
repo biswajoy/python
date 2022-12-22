@@ -1,0 +1,16 @@
+def solve(N, A, B):
+  if A == B:
+    return "YES"
+  if A.count('1') != B.count('1') or A.count('0') != B.count('0'):
+    return "NO"
+  for X in range(2, N+1):
+    if any(A[i:i+X][::-1] != B[i:i+X] for i in range(N-X+1)):
+      return "YES"
+  return "NO"
+
+T = int(input())
+for i in range(T):
+  N = int(input())
+  A = input()
+  B = input()
+  print(solve(N, A, B))
