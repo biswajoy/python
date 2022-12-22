@@ -1,0 +1,12 @@
+t = int(input())
+for i in range(t):
+    n = int(input())
+    l = []
+    for j in range(n):
+        d = int(input())
+        if d not in l:
+            l.append(d)
+        else:
+            l.remove(d)
+    print(l[0])
+        
