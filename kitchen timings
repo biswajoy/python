@@ -1,0 +1,14 @@
+# cook your dish here
+# Test cases
+t = int(input())
+
+# Process each test case
+for _ in range(t):
+    # Read in the starting and ending times
+    x, y = map(int, input().split())
+
+    # Calculate the number of hours Chef works
+    if y > x:
+        print(y - x)
+    else:
+        print(y + (12 - x))
