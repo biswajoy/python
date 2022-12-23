@@ -1,0 +1,10 @@
+t = int(input())
+for i in range(t):
+    n, x = map(int, input().split())
+    A = list(map(int, input().split()))
+    B = list(map(int, input().split()))
+    total_cost = 0
+    for i in range(n):
+        if A[i] >= x:
+            total_cost += B[i]
+    print(total_cost)
