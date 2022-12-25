@@ -1,0 +1,3 @@
+for _ in range(int(input())):
+    ball, box = map(int, input().split())
+    print("YES" if ball >= ((box * (box + 1)) // 2) else "NO")
