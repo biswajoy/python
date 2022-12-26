@@ -1,0 +1,9 @@
+T = int(input())
+for _ in range(T):
+    T1, T2, R1, R2 = map(int, input().split())
+    k1 = (T1**2) / (R1**3)
+    k2 = (T2**2) / (R2**3)
+    if k1 == k2:
+        print("Yes")
+    else:
+        print("No")
