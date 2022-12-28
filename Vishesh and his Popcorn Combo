@@ -1,0 +1,10 @@
+t = int(input())
+for i in range(t):
+    a1, a2 = map(int, input().split())
+    b1, b2 = map(int, input().split())
+    c1, c2 = map(int, input().split())
+    s_a = a1 + a2
+    s_b = b1 + b2
+    s_c = c1 + c2
+    m_s = max(s_a, s_b, s_c)
+    print(m_s)
