@@ -1,0 +1,8 @@
+T = int(input())
+for t in range(T):
+    n, a, b = map(int, input().split())
+    numbers = list(map(int, input().split()))
+    probability_a = numbers.count(a) / n
+    probability_b = numbers.count(b) / n
+    probability = probability_a * probability_b
+    print("{:.10f}".format(probability))
