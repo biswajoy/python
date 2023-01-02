@@ -1,0 +1,11 @@
+def min_players(n, k, h):
+  c = 0
+  for height in h:
+    if height > k:
+      c += 1
+  return c
+t = int(input())
+for i in range(t):
+  n, k = map(int, input().split())
+  h = list(map(int, input().split()))
+  print(min_players(n, k, h))
