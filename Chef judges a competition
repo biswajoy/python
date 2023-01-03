@@ -1,0 +1,22 @@
+def find_winner(n, a, b):
+    a_max = max(a)
+    b_max = max(b)
+    for i in range(n):
+        if a[i] == a_max:
+            t_a = i
+    for i in range(n):
+        if b[i] == b_max:
+            t_b = i
+    sum_a = sum(a)-a[t_a]
+    sum_b = sum(b)-b[t_b]
+    if sum_a > sum_b:
+        return 'Bob'
+    elif sum_a < sum_b:
+        return 'Alice'
+    else: return 'Draw'
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+    print(find_winner(n, a, b))
