@@ -1,0 +1,6 @@
+for _ in range(int(input())):
+  N = int(input())
+  s = list(map(int, input().split()))
+  v = input()
+  List = [s[i] for i in range(N) if v[i] == "0"]
+  print(min(List) if List else -1)
