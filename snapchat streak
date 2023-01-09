@@ -1,0 +1,13 @@
+for _ in range(int(input())):
+    n = int(input())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+    max_st = 0
+    st = 0
+    for x, y in zip(a, b):
+        if x != 0 and y != 0:
+            st += 1
+            max_st = max(max_st, st)
+        else:
+            st = 0
+    print(max_st)
