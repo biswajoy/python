@@ -1,0 +1,7 @@
+t= int(input())
+for i in range(t):
+    r1, w1, c1 = map(int, input().split())
+    r2, w2, c2 = map(int, input().split())
+    a_greater = (r1 > r2) + (w1 > w2) + (c1 > c2)
+    b_greater = (r1 < r2) + (w1 < w2) + (c1 < c2)
+    print("A" if a_greater > b_greater else "B" if b_greater > a_greater else "DRAW")
