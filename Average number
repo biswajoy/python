@@ -1,0 +1,7 @@
+for _ in range (int(input())):
+    n,k,v=map(int,input().split())
+    a=list(map(int,input().split()))
+    if ((v*(n+k))-sum(a))%k==0 and ((v*(n+k))-sum(a))>0:
+        print(((v*(n+k))-sum(a))//k)
+    else:
+        print("-1")
