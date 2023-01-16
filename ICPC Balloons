@@ -1,0 +1,12 @@
+for _ in range(int(input())):
+    n=int(input())
+    a=list(map(int,input().split()))
+    s=28
+    for i in range(n):
+        if a[i]<=7:
+            s-=a[i]
+        if s==0:
+            print(i+1)
+            break
+    else:
+        print(n)
