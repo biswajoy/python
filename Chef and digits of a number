@@ -1,0 +1,9 @@
+T = int(input())
+for _ in range(T):
+    D = input()
+    ones = D.count("1")
+    zeroes = len(D) - ones
+    if ones == 1 or zeroes == 1:
+        print("Yes")
+    else:
+        print("No")
