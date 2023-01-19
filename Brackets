@@ -1,0 +1,15 @@
+def r(s):
+    b = 0
+    m = 0
+    for c in s:
+        if c == '(':
+            b += 1
+        else:
+            b -= 1
+        m = max(m, b)
+    return '(' * m + ')' * m
+
+t = int(input())
+for _ in range(t):
+    a = input()
+    print(r(a))
