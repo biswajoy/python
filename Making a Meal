@@ -1,0 +1,22 @@
+for _ in range(int(input())):
+    c = 0
+    o = 0
+    d = 0
+    e = 0
+    h = 0
+    f = 0
+    for _ in range(int(input())):
+        for i in input():
+            if i == 'c':
+                c += 1
+            elif i == 'o':
+                o += 1
+            elif i == 'd':
+                d += 1
+            elif i == 'e':
+                e += 1
+            elif i == 'h':
+                h += 1
+            elif i == 'f':
+                f += 1
+    print(min(c//2, o, d, e//2, h, f) if c >= 2 and e >= 2 else 0)
