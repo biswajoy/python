@@ -1,0 +1,18 @@
+for _ in range(int(input())):
+    n, u, d = map(int, input().split())
+    h = list(map(int, input().split()))
+    ans = 1
+    flag = True
+    for i in range(n - 1):
+        if h[i] == h[i + 1]:
+            ans += 1
+        elif h[i] > h[i + 1] and h[i] <= h[i + 1] + d:
+            ans += 1
+        elif h[i] > h[i + 1] and flag:
+            ans += 1
+            flag = False
+        elif h[i] < h[i + 1] and h[i] + u >= h[i + 1]:
+            ans += 1
+        else:
+            break
+    print(ans)
