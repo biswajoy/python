@@ -1,0 +1,8 @@
+T = int(input())
+for _ in range(T):
+    n, m, k = map(int, input().split())
+    a = set(map(int, input().split()))
+    b = set(map(int, input().split()))
+    both = len(a & b)
+    neither = n - len(a | b)
+    print(both, neither)
