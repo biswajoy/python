@@ -1,0 +1,5 @@
+t=int(input())
+for i in range(t):
+    n,p,q=map(int,input().split())
+    num=(q-n*n)/(p-1)
+    print(int(num))
