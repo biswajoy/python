@@ -1,0 +1,15 @@
+for i in range(int(input())):
+    tp = int(input())
+    n = list(map(int, input().split()))
+    n.sort()
+    infected = 1
+    arr = []
+    for j in range(len(n)-1):
+        if(n[j+1] - n[j]) <= 2:
+            infected += 1
+        else:
+            arr.append(infected)
+            infected = 1
+    arr.append(infected)
+    
+    print(min(arr), max(arr))
