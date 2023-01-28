@@ -1,0 +1,14 @@
+t=int(input())
+for i in range(t):
+    d,day=input().split()
+    d=int(d)
+    a=[4]*7
+    r=d-28
+    days=["mon","tues","wed","thurs","fri","sat","sun"]
+    i=days.index(day)
+    for j in range(r):
+        a[i]=5
+        i+=1
+        if i>6:
+            i=0
+    print(*a)
