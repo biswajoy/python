@@ -1,0 +1,9 @@
+for i in range(int(input())):
+    a,b,c=map(int,input().split())
+    if a % b == 0:
+        print(-1)
+    else:
+        c = (c//a + 1)*a if c % a else c
+        while c % b == 0:
+            c += a
+        print(c)
