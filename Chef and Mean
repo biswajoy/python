@@ -1,0 +1,14 @@
+for _ in range(int(input().strip())):
+    n = int(input().strip())
+    a = list(map(int, input().strip().split()))
+    s = sum(a)
+    mean = s / n
+    flag = False
+    for i in range(n):
+        if s - a[i] == (n - 1) * a[i]:
+            flag = True
+            break
+    if flag:
+        print(i + 1)
+    else:
+        print("Impossible")
